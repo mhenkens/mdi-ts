@@ -1,0 +1,64 @@
+{
+  "name": "@nationalbankbelgium/mdi-ts",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run clean && npm run transform-icons",
+    "clean": "npx rimraf ./dist",
+    "commit": "cz",
+    "generate:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "generate:changelog-recent": "conventional-changelog -p angular | tail -n +3",
+    "publish": "npm run prepare-library-metadata && cd dist/ && npm pack && cd ..",
+    "prepare": "husky || true",
+    "prepare-library-metadata": "node prepare-metadata.js",
+    "release": "release-it",
+    "transform-icons": "svg-to-ts-files"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@deboxsoft/cpx": "^1.5.0",
+    "@mdi/svg": "^4.9.95",
+    "@nationalbankbelgium/code-style": "^1.11.0",
+    "commitizen": "^4.3.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "cz-customizable": "^7.3.0",
+    "husky": "^9.1.7",
+    "release-it": "^18.1.2",
+    "rimraf": "^6.0.1",
+    "svg-to-ts": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreuzerk/svg-icon-library-starter.git"
+  },
+  "keywords": [
+    "SVG",
+    "icons",
+    "library",
+    "mdi",
+    "typescript"
+  ],
+  "author": {
+    "email": "alexis.georges@nbb.be",
+    "name": "Alexis Georges",
+    "url": "https://www.nbb.be"
+  },
+  "contributors": [
+    {
+      "email": "dujacquier.nicolas@hotmail.com",
+      "name": "Nicolas Dujacquier",
+      "url": "https://github.com/DujacquierNicolas"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NationalBankBelgium/mdi-ts/issues"
+  },
+  "homepage": "https://github.com/NationalBankBelgium/mdi-ts#readme",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
